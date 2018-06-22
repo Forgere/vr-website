@@ -2,10 +2,75 @@
 <html>
 <head>
 	<title>展示站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    body{
+      width: 100%;
+    }
+    body,h1{
+      margin: 0;
+    }
+    h1{
+      font-size: 18px;
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+    }
+    #list{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #list a{
+      display: block;
+      text-decoration: none;
+      color: #000;
+      flex: 0 0 50%;
+      padding: 6px;
+      box-sizing: border-box;
+    }
+    #list img{
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
+  <h1>项目列表</h1>
 	<div id="list">
-		<a href="./proj/index.html">testvr</a>
 	</div>
+  <script type="text/javascript">
+    function appendHtml(resp){
+      for (var i = resp.length - 1; i >= 0; i--) {
+        console.log(typeof(resp))
+        var name = resp[i]
+        var content = `
+          <a href="/proj/${name}/index.html">
+            <img src="/proj/${name}/panos/111.tiles/thumb.jpg"/>
+            ${name}
+          </a>
+          `
+        document.getElementById('list').innerHTML += content;
+      }
+    }
+
+    var request = new XMLHttpRequest();
+    request.open('GET', '/getlist', true);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        // Success!
+        var resp = request.responseText;
+        var yourEvent = JSON.parse(resp);
+        appendHtml(yourEvent.res)
+      }
+    };
+
+    request.onerror = function() {
+      // There was a connection error of some sort
+    };
+
+    request.send();
+  </script>
 </body>
 </html>
