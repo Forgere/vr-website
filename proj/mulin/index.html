@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>睦林家居馆</title>
-  <meta name="description" content="这家6000平米的独立家居店重新装修开业啦！！">
+  <meta name="description" content="这家4500平米的独立家居店重新装修开业啦！！">
   <meta charset="utf-8" name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="./css/swiper.min.css">
+  <script src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
 
   <!-- Demo styles -->
   <style>
@@ -144,7 +145,7 @@
   </style>
 </head>
 <body>
-  <img src="./images/睦林家居门店.jpg" style="display: none;">
+  <img src="./images/mlmd.jpg" style="display: none;">
   <!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -155,10 +156,10 @@
         <img src="./images/CBD--2.jpg">
       </div>
       <div class="swiper-slide">
-        <img src="./images/睦林家居2.jpg">
+        <img src="./images/ml2.jpg">
       </div>
       <div class="swiper-slide">
-        <img src="./images/睦林家居门店.jpg">
+        <img src="./images/mlmd.jpg">
       </div>
     </div>
   </div>
@@ -202,6 +203,7 @@
   <div class="contactor subtitle">
     <p><span>联系人</span>：王小姐</p>
     <p><span>电话</span>：15251333977  13338091918</p>
+    <p><span>地址</span>：江苏省启东市寅阳镇江夏村三星河桥336线南侧</p>
   </div>
   <div class="map" id="map">
   </div>
@@ -232,6 +234,32 @@
     jsapi.charset = 'utf-8';
     jsapi.src = url;
     document.head.appendChild(jsapi);
+
+    wx.onMenuShareTimeline({
+        title: '睦林家居馆', // 分享标题
+        link: 'http://vr.shuangzhi.wang/proj/mulin/index.html', // 分享链接，该链接域名必须与当前企业的可信域名一致
+        imgUrl: 'http://vr.shuangzhi.wang/proj/mulin/images/mlmd.jpg', // 分享图标
+        success: function () {
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+
+    wx.onMenuShareAppMessage({
+        title: '睦林家居馆', // 分享标题
+        desc: '这家4500平米的独立家居店重新装修开业啦！！', // 分享描述
+        link: 'http://vr.shuangzhi.wang/proj/mulin/index.html', // 分享链接，该链接域名必须与当前企业的可信域名一致
+        imgUrl: 'http://vr.shuangzhi.wang/proj/mulin/images/mlmd.jpg', // 分享图标
+        type: 'link', // 分享类型,music、video或link，不填默认为link
+        success: function () {
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
   </script>
 </body>
 </html>
