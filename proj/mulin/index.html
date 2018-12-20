@@ -1,76 +1,237 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>睦林家居馆</title>
-	<meta name="description" content="这家6000平米的独立家居店重新装修开业啦！！">
-	<meta charset="utf-8" name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
-	<style type="text/css" link="./css/swiper.css"></style>
-	<style>
-	    html, body {
-	      position: relative;
-	      height: 100%;
-	    }
-	    body {
-	      background: #eee;
-	      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-	      font-size: 14px;
-	      color:#000;
-	      margin: 0;
-	      padding: 0;
-	    }
-	    .swiper-container {
-	      width: 100%;
-	      height: 100%;
-	    }
-	    .swiper-slide {
-	      text-align: center;
-	      font-size: 18px;
-	      background: #fff;
-	      /* Center slide text vertically */
-	      display: -webkit-box;
-	      display: -ms-flexbox;
-	      display: -webkit-flex;
-	      display: flex;
-	      -webkit-box-pack: center;
-	      -ms-flex-pack: center;
-	      -webkit-justify-content: center;
-	      justify-content: center;
-	      -webkit-box-align: center;
-	      -ms-flex-align: center;
-	      -webkit-align-items: center;
-	      align-items: center;
-	    }
-	</style>
+  <meta charset="utf-8">
+  <title>睦林家居馆</title>
+  <meta name="description" content="这家6000平米的独立家居店重新装修开业啦！！">
+  <meta charset="utf-8" name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./css/swiper.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #efefef;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 210px;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .swiper-slide img{
+      width: 100%;
+    }
+    /*subtitle*/
+    .subtitle{
+      text-align: center;
+      padding: 20px;
+    }
+    .subtitle .tags{
+      display: flex;
+      justify-content: space-around;
+      padding: 20px 10px;
+      margin-bottom: 20px;
+    }
+    .subtitle .tags span{
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      color: #fff;
+      background: #333;
+      line-height: 80px;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+    .subtitle p {
+      color: #777;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    /*band*/
+    .showband{
+      display: flex;
+      justify-content: space-between;
+      padding: 0 4px;
+      margin-bottom: 10px;
+    }
+    .showband .desc{
+      text-align: center;
+      height: 28px;
+      line-height: 24px;
+      font-size: 18px;
+      padding-top: 6px;
+      background-color: #333;
+      color: #fff;
+    }
+    /*map*/
+    #map{
+      width: 100%;
+      height: 250px;
+    }
+    #panel {
+        position: fixed;
+        background-color: white;
+        max-height: 90%;
+        overflow-y: auto;
+        top: 10px;
+        right: 10px;
+        width: 280px;
+    }
+    #panel .amap-call {
+        background-color: #009cf9;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    #panel .amap-lib-driving {
+      border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        overflow: hidden;
+    }
+    .band{
+      width: 180px;
+      height: 110px;
+    }
+    .cbd{
+      background: url('./images/CBD--3.jpg') center no-repeat;
+      background-size: cover;
+    }
+    .sx{
+      background: url('./images/shuxing.jpeg') center no-repeat;
+      background-size: cover;
+    }
+    .brs{
+      background: url('./images/brs.png') center no-repeat;
+      background-size: cover;
+    }
+    .gmjj{
+      background: url('./images/gmjj.jpeg') center no-repeat;
+      background-size: cover;
+    }
+    .contactor{
+      text-align: center;
+    }
+
+    .subtitle p span{
+      font-weight: bolder;
+    }
+  </style>
 </head>
 <body>
-	<img src="#" style="display: none;">
-	<div class="swiper-container">
-	    <div class="swiper-wrapper">
-	      <div class="swiper-slide">Slide 1</div>
-	      <div class="swiper-slide">Slide 2</div>
-	      <div class="swiper-slide">Slide 3</div>
-	      <div class="swiper-slide">Slide 4</div>
-	      <div class="swiper-slide">Slide 5</div>
-	      <div class="swiper-slide">Slide 6</div>
-	      <div class="swiper-slide">Slide 7</div>
-	      <div class="swiper-slide">Slide 8</div>
-	      <div class="swiper-slide">Slide 9</div>
-	      <div class="swiper-slide">Slide 10</div>
-	    </div>
-	    <!-- Add Pagination -->
-	    <div class="swiper-pagination"></div>
-	  </div>
-	<script type="text/javascript" src="./js/swiper.js"></script>
-	<script type="text/javascript" src="./js/flex.js"></script>
+  <img src="./images/睦林家居3.jpg" style="display: none;">
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="./images/CBD--4.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/CBD--2.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/睦林家居2.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/睦林家居门店.jpg">
+      </div>
+    </div>
+  </div>
 
-	<script type="text/javascript">
-		var swiper = new Swiper('.swiper-container', {
-	      direction: 'vertical',
-	      pagination: {
-	        el: '.swiper-pagination',
-	        clickable: true,
-	      },
-	    });
-	</script>
+  <div class="subtitle">
+    <div class="tags">
+      <span>品种多</span>
+      <span>空间大</span>
+      <span>价格低</span>
+    </div>
+    <p>汇聚时尚实用的一线二线品牌，选择更丰富</p>
+    <p>占地4500平米家居展厅，挑选更直观</p>
+    <p>独立自有展示房，质优价廉</p>
+  </div>
+
+  <div class="showband">
+    <div class="band-warp">
+      <div class="band cbd">
+      </div>
+      <div class="desc">CBD家居</div>
+    </div>
+    <div class="band-warp">
+      <div class="band sx">
+      </div>
+      <div class="desc">水星家居</div>
+    </div>
+  </div>
+  <div class="showband">
+    <div class="band-warp">
+      <div class="band brs">
+      </div>
+      <div class="desc">博蕊斯头等座</div>
+    </div>
+    <div class="band-warp">
+      <div class="band gmjj">
+      </div>
+      <div class="desc">光明家居</div>
+    </div>
+  </div>
+
+  <div class="contactor subtitle">
+    <p><span>联系人</span>：王小姐</p>
+    <p><span>电话</span>：15251333977  13338091918</p>
+  </div>
+  <div class="map" id="map">
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="./js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container');
+
+    window.onLoad  = function(){
+        var map = new AMap.Map('map', {
+            zoom:14,//级别
+            center: [121.848379,31.731826],
+        });
+        var marker = new AMap.Marker({
+            position: new AMap.LngLat(121.848379,31.731826),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+            title: '启东睦邻家具馆'
+        });
+
+        // 将创建的点标记添加到已有的地图实例：
+        map.add(marker);
+
+    }
+    var url = 'https://webapi.amap.com/maps?v=1.4.11&key=0d457efbf2bc78c2f1e0769aa257755d&callback=onLoad';
+    var jsapi = document.createElement('script');
+    jsapi.charset = 'utf-8';
+    jsapi.src = url;
+    document.head.appendChild(jsapi);
+  </script>
 </body>
 </html>
