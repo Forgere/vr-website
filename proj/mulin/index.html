@@ -23,9 +23,11 @@
       margin: 0;
       padding: 0;
     }
-    .swiper-container {
+    .swiper-container,.swiper-container2{
       width: 100%;
       height: 210px;
+      overflow: hidden;
+      position: relative;
     }
     .swiper-slide {
       text-align: center;
@@ -139,29 +141,81 @@
       text-align: center;
     }
 
-    .subtitle p span{
+    .subtitle p{
       font-weight: bolder;
+    }
+    /*banner*/
+    .banner{
+      position: relative;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+    .banner1{
+      margin-top: 10px;
+    }
+    .banner .line1,.banner .line2{
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid #aaa;
+      top: 15px;
+    }
+    .banner .line2{
+      top: 20px;
+    }
+    .banner .content{
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      background-color: #efefef;
+      padding: 0 10px;
+    }
+    .blank{
+      height: 30px;
+    }
+    .swiper-pagination-bullet{
+      background: #fff;
+    }
+
+    .rule{
+      padding-bottom: 20px;
+    }
+    .rule .title{
+      background: url("./images/belif.png") -190px center no-repeat;
+      color: #fff;
+      font-size: 18px;
+      text-indent: 20px;
+    }
+    .rule .content{
+      color: #777;
+      font-size: 16px;
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .rule2 .title{
+      background: url("./images/belif.png") -120px center no-repeat;
+    }
+    .rule3 .title{
+      background: url("./images/belif.png") -210px center no-repeat;
     }
   </style>
 </head>
 <body>
   <img src="./images/mlmd.jpg" style="display: none;">
-  <!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="./images/CBD--4.jpg">
+        <img src="./images/CBD--1.jpg">
       </div>
       <div class="swiper-slide">
         <img src="./images/CBD--2.jpg">
       </div>
-      <div class="swiper-slide">
-        <img src="./images/ml2.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="./images/mlmd.jpg">
-      </div>
     </div>
+    <div class="swiper-pagination"></div>
   </div>
 
   <div class="subtitle">
@@ -174,7 +228,11 @@
     <p>占地4500平米家居展厅，挑选更直观</p>
     <p>独立自有展示房，质优价廉</p>
   </div>
-
+  <div class="banner banner1">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="content">品牌展示</div>
+  </div>
   <div class="showband">
     <div class="band-warp">
       <div class="band cbd">
@@ -199,7 +257,74 @@
       <div class="desc">光明家居</div>
     </div>
   </div>
-
+  <div class="blank"></div>
+  <div class="banner">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="content">内景图</div>
+  </div>
+    <!-- Swiper -->
+  <div class="swiper-container2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="./images/mlmd.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/CBD--4.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml2.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml1.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml3.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml4.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml5.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml6.jpg">
+      </div>
+    </div>
+    <div class="swiper-pagination swiper-pagination2"></div>
+  </div>
+  <div class="blank"></div>
+  <div class="banner">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="content">优惠信息</div>
+  </div>
+  <div class="discount">
+    <div class="rule rule1">
+      <div class="title">
+        活动一：来了就送
+      </div>
+      <div class="content">
+        活动期间只要进店即可领取小礼品一份，先到先得，送完为止
+      </div>
+    </div>
+    <div class="rule rule2">
+      <div class="title">
+        活动二：品牌家具疯狂促销
+      </div>
+      <div class="content">
+        软体一线品牌CBD满1万打七折，满3万打6.5折，满5万打6折
+      </div>
+    </div>
+    <div class="rule rule3">
+      <div class="title">
+        活动三：买就送
+      </div>
+      <div class="content">
+        买餐桌送坐垫，买床垫送床笠，买家具送窗帘
+      </div>
+    </div>
+  </div>
   <div class="contactor subtitle">
     <p><span>联系人</span>：王小姐</p>
     <p><span>电话</span>：15251333977  13338091918</p>
@@ -213,7 +338,24 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper('.swiper-container');
+    var swiper = new Swiper('.swiper-container',{
+        autoplay: {
+          delay: 1000,
+        },
+        speed: 500,
+        pagination: {
+          el: '.swiper-pagination',
+        }
+    });
+
+    var swiper = new Swiper('.swiper-container2',{
+        autoplay: {
+          delay: 5000,
+        },
+        pagination: {
+          el: '.swiper-pagination2',
+        }
+    });
 
     window.onLoad  = function(){
         var map = new AMap.Map('map', {
