@@ -186,14 +186,14 @@
     }
     .rule .title{
       background: url("./images/belif.png") -190px center no-repeat;
-      color: #fff;
+      color: #fff200;
       font-size: 18px;
       text-indent: 20px;
     }
     .rule .content{
       color: #777;
       font-size: 16px;
-      padding-left: 20px;
+      padding:0 10px 0 20px;
       margin-top: 8px;
     }
     .rule2 .title{
@@ -202,12 +202,18 @@
     .rule3 .title{
       background: url("./images/belif.png") -210px center no-repeat;
     }
+
+    .discout p{
+      text-align: center;
+
+    }
   </style>
 </head>
 <body>
   <img src="./images/mlmd.jpg" style="display: none;">
-  <audio src="./audio/loop.ogg" autoplay loop/>
-    Your browser does not support the audio element.
+  <iframe src="./audio/loop.ogg" id="audio" style="display:none"></iframe>
+  <audio id="player" autoplay loop>
+    <source src="./audio/loop.ogg" type="audio/mp3">
   </audio>
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -306,12 +312,16 @@
     <div class="content">优惠信息</div>
   </div>
   <div class="discount">
+    <div class="subtitle">
+      <p>老店重装 盛大开业 疯狂促销活动</p>
+      <p>活动时间:2018年12月28日——2018年1月5日</p>
+    </div>
     <div class="rule rule1">
       <div class="title">
         活动一：来了就送
       </div>
       <div class="content">
-        活动期间只要进店即可领取小礼品一份，先到先得，送完为止
+        活动期间只要进店即可领取大礼品一份，先到先得，送完为止
       </div>
     </div>
     <div class="rule rule2">
@@ -327,12 +337,12 @@
         活动三：买就送
       </div>
       <div class="content">
-        买餐桌送坐垫，买床垫送床笠，买家具送窗帘
+        买餐桌送坐垫，买床垫送品牌床笠，买家具送品牌窗帘，成交后再可参加抽奖活动，惊喜不断
       </div>
     </div>
   </div>
   <div class="contactor subtitle">
-    <p><span>联系人</span>：王小姐</p>
+    <p><span>联系人</span>：王小姐 周小姐</p>
     <p><span>电话</span>：15251333977  13338091918</p>
     <p><span>地址</span>：江苏省启东市寅阳镇江夏村三星河桥336线南侧</p>
   </div>
