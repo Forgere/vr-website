@@ -210,11 +210,11 @@
 </head>
 <body>
   <img src="./images/mlmd.jpg" style="display: none;">
-  <!-- <iframe src="./audio/loop.ogg" allow="autoplay" id="audio" style="display:none"></iframe> -->
-  <audio id="player" autoplay loop>
+  <iframe src="./audio/loop.ogg" allow="autoplay" id="audio" style="display:none"></iframe>
+<!--   <audio id="player" loop>
     <source src="./audio/loop.ogg" type="audio/mp3">
     Your browser does not support the audio element.
-  </audio>
+  </audio> -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -386,14 +386,14 @@
         // 将创建的点标记添加到已有的地图实例：
         map.add(marker);
 
-        var au = document.getElementById('player');
-        document.addEventListener('touchstart', musicPlay);
-        document.addEventListener('click', musicPlay);
-        function musicPlay() {
-            au.play();
-            document.removeEventListener('touchstart', musicPlay);
-            document.removeEventListener('click', musicPlay);
-        }
+        // var au = document.getElementById('player');
+        // document.addEventListener('touchstart', musicPlay);
+        // document.addEventListener('click', musicPlay);
+        // function musicPlay() {
+        //     au.play();
+        //     document.removeEventListener('touchstart', musicPlay);
+        //     document.removeEventListener('click', musicPlay);
+        // }
     }
     var url = 'https://webapi.amap.com/maps?v=1.4.11&key=0d457efbf2bc78c2f1e0769aa257755d&callback=onLoad';
     var jsapi = document.createElement('script');
