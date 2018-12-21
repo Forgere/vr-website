@@ -7,7 +7,6 @@
   <meta charset="utf-8" name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="./css/swiper.min.css">
-  <script src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
   <!-- Demo styles -->
   <style>
     html, body {
@@ -202,19 +201,42 @@
       background: url("./images/belif.png") -210px center no-repeat;
     }
 
-    .discout p{
+    .mask{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0,0.2);
+    }
+    .mask.off{
+      display: none;
+    }
+    .mask #play{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+      background-color: red;
+      color: #fff;
       text-align: center;
-
+      line-height: 100px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
   <img src="./images/mlmd.jpg" style="display: none;">
-  <iframe src="./audio/loop.ogg" allow="autoplay" id="audio" style="display:none"></iframe>
-<!--   <audio id="player" loop>
+  <!-- <iframe src="./audio/loop.ogg" allow="autoplay" id="audio" style="display:none"></iframe> -->
+  <audio id="player" autoplay loop>
     <source src="./audio/loop.ogg" type="audio/mp3">
     Your browser does not support the audio element.
-  </audio> -->
+  </audio>
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -348,12 +370,29 @@
   </div>
   <div class="map" id="map">
   </div>
+  <div class="mask" id="mask">
+    <div id="play">播放音乐</div>
+  </div>
 
   <!-- Swiper JS -->
   <script src="./js/swiper.min.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
+
+    var au = document.getElementById('player');
+    // document.addEventListener('touchstart', musicPlay);
+    // document.addEventListener('click', musicPlay);
+    function musicPlay() {
+        au.play();
+        document.getElementById('mask').classList.add('off');
+        // document.removeEventListener('touchstart', musicPlay);
+        // document.removeEventListener('click', musicPlay);
+    }
+    document.getElementById('mask').addEventListener('click', function(){
+      document.getElementById('mask').classList.add('off');
+    });
+    document.getElementById('play').addEventListener('click', musicPlay);
     var swiper = new Swiper('.swiper-container',{
         autoplay: {
           delay: 1000,
@@ -385,15 +424,6 @@
 
         // 将创建的点标记添加到已有的地图实例：
         map.add(marker);
-
-        // var au = document.getElementById('player');
-        // document.addEventListener('touchstart', musicPlay);
-        // document.addEventListener('click', musicPlay);
-        // function musicPlay() {
-        //     au.play();
-        //     document.removeEventListener('touchstart', musicPlay);
-        //     document.removeEventListener('click', musicPlay);
-        // }
     }
     var url = 'https://webapi.amap.com/maps?v=1.4.11&key=0d457efbf2bc78c2f1e0769aa257755d&callback=onLoad';
     var jsapi = document.createElement('script');
@@ -401,31 +431,6 @@
     jsapi.src = url;
     document.head.appendChild(jsapi);
 
-    wx.onMenuShareTimeline({
-        title: '睦林家居馆', // 分享标题
-        link: 'http://vr.shuangzhi.wang/proj/mulin/index.html', // 分享链接，该链接域名必须与当前企业的可信域名一致
-        imgUrl: 'http://vr.shuangzhi.wang/proj/mulin/images/mlmd.jpg', // 分享图标
-        success: function () {
-            // 用户确认分享后执行的回调函数
-        },
-        cancel: function () {
-            // 用户取消分享后执行的回调函数
-        }
-    });
-
-    wx.onMenuShareAppMessage({
-        title: '睦林家居馆', // 分享标题
-        desc: '这家4500平米的独立家居店重新装修开业啦！！', // 分享描述
-        link: 'http://vr.shuangzhi.wang/proj/mulin/index.html', // 分享链接，该链接域名必须与当前企业的可信域名一致
-        imgUrl: 'http://vr.shuangzhi.wang/proj/mulin/images/mlmd.jpg', // 分享图标
-        type: 'link', // 分享类型,music、video或link，不填默认为link
-        success: function () {
-            // 用户确认分享后执行的回调函数
-        },
-        cancel: function () {
-            // 用户取消分享后执行的回调函数
-        }
-    });
   </script>
 </body>
 </html>
