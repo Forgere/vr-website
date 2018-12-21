@@ -419,8 +419,19 @@
         });
         var marker = new AMap.Marker({
             position: new AMap.LngLat(121.848379,31.731826),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
-            title: '启东睦邻家具馆'
+            title: '启东睦邻家具馆',
+            label: {
+                offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                content: "启东睦邻家具馆（点击导航）"
+            } 
         });
+        console.log(marker.on)
+        marker.on('click',function(e){
+            marker.markOnAMAP({
+                name:'启东睦邻家具馆',
+                position:marker.getPosition()
+            })
+        })
 
         // 将创建的点标记添加到已有的地图实例：
         map.add(marker);
