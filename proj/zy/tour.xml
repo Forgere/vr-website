@@ -10,7 +10,7 @@
 	               maps_zoombuttons="false"
 	               gyro="true"
 	               webvr="true"
-	               webvr_gyro_keeplookingdirection="false"
+	               webvr_gyro_keeplookingdirection="true"
 	               webvr_prev_next_hotspots="true"
 	               littleplanetintro="true"
 	               title="true"
