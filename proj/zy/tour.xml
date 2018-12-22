@@ -10,7 +10,7 @@
 	               maps_zoombuttons="false"
 	               gyro="true"
 	               webvr="true"
-	               webvr_gyro_keeplookingdirection="true"
+	               webvr_gyro_keeplookingdirection="false"
 	               webvr_prev_next_hotspots="true"
 	               littleplanetintro="true"
 	               title="true"
@@ -25,7 +25,7 @@
 	               thumbs_loop="false"
 	               tooltips_buttons="false"
 	               tooltips_thumbs="false"
-	               tooltips_hotspots="false"
+	               tooltips_hotspots="true"
 	               tooltips_mapspots="false"
 	               deeplinking="false"
 	               loadscene_flags="MERGE"
@@ -92,7 +92,7 @@
 		<image if="webvr.isenabled">
 			<cube url="panos/ZY_01.tiles/vr/pano_%s.jpg" />
 		</image>
-		<hotspot name="spot1" ath="5.214" atv="1.874" onloaded="do_crop_animation(64,64, 60);" onclick="loadscene(scene_ZY_02)" url="skin/animatedhotspot_black.png" tooltip="CSS-3D Transforms Logo"/>
+		<hotspot name="spot1" ath="5.214" atv="1.874" onloaded="do_crop_animation(64,64, 60);" onclick="loadscene(scene_ZY_02)" url="skin/animatedhotspot_black.png" tooltip="门"/>
 
 
 	</scene>
