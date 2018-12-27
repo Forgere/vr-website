@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>展示站</title>
+  <title>展示站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style type="text/css">
-    body{
+    body {
       width: 100%;
     }
-    body,h1{
+
+    body,
+    h1 {
       margin: 0;
     }
-    h1{
+
+    h1 {
       font-size: 18px;
       height: 34px;
       line-height: 34px;
       text-align: center;
     }
-    #list{
+
+    #list {
       display: flex;
       flex-wrap: wrap;
     }
-    #list a{
+
+    #list a {
       display: block;
       text-decoration: none;
       color: #000;
@@ -28,24 +34,23 @@
       padding: 6px;
       box-sizing: border-box;
     }
-    #list img{
+
+    #list img {
       display: block;
       width: 100%;
       border-radius: 8px;
     }
   </style>
 </head>
+
 <body>
   <h1>项目列表</h1>
-	<div id="list">
-    <a href="/proj/mulin/index.html">
-      家具馆
-    </a>
-	</div>
+  <div id="list">
+  </div>
   <script type="text/javascript">
-    function appendHtml(resp){
+    function appendHtml(resp) {
       for (var i = resp.length - 1; i >= 0; i--) {
-        console.log(typeof(resp))
+        console.log(typeof (resp))
         var name = resp[i]
         var content = `
           <a href="/proj/${name}/tour.html">
@@ -60,7 +65,7 @@
     var request = new XMLHttpRequest();
     request.open('GET', '/getlist', true);
 
-    request.onload = function() {
+    request.onload = function () {
       if (request.status >= 200 && request.status < 400) {
         // Success!
         var resp = request.responseText;
@@ -69,11 +74,12 @@
       }
     };
 
-    request.onerror = function() {
+    request.onerror = function () {
       // There was a connection error of some sort
     };
 
     request.send();
   </script>
 </body>
+
 </html>

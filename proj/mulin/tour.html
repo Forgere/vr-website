@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>睦林家居馆</title>
+  <meta name="description" content="这家4500平米的独立家居店重新装修开业啦！！">
+  <meta charset="utf-8" name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./css/swiper.min.css">
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?abdb572577430cc41b60914a844a5216";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #efefef;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container,.swiper-container2{
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
+      position: relative;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .swiper-slide img{
+      width: 100%;
+    }
+    /*subtitle*/
+    .subtitle{
+      text-align: center;
+      padding: 20px;
+    }
+    .subtitle .tags{
+      display: flex;
+      justify-content: space-around;
+      padding: 20px 10px;
+      margin-bottom: 20px;
+    }
+    .subtitle .tags span{
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      color: #fff;
+      background: #333;
+      line-height: 80px;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+    .subtitle p {
+      color: #777;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    /*band*/
+    .showband{
+      display: flex;
+      justify-content: space-between;
+      padding: 0 4px;
+      margin-bottom: 10px;
+    }
+    .showband .desc{
+      text-align: center;
+      height: 28px;
+      line-height: 24px;
+      font-size: 18px;
+      padding-top: 6px;
+      background-color: #333;
+      color: #fff;
+    }
+    /*map*/
+    #map{
+      width: 100%;
+      height: 250px;
+    }
+    #panel {
+        position: fixed;
+        background-color: white;
+        max-height: 90%;
+        overflow-y: auto;
+        top: 10px;
+        right: 10px;
+        width: 280px;
+    }
+    #panel .amap-call {
+        background-color: #009cf9;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    #panel .amap-lib-driving {
+      border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        overflow: hidden;
+    }
+    .band{
+      width: 180px;
+      height: 110px;
+    }
+    .cbd{
+      background: url('./images/CBD--3.jpg') center no-repeat;
+      background-size: cover;
+    }
+    .sx{
+      background: url('./images/shuxing.jpeg') center no-repeat;
+      background-size: cover;
+    }
+    .brs{
+      background: url('./images/brs.png') center no-repeat;
+      background-size: cover;
+    }
+    .gmjj{
+      background: url('./images/gmjj.jpeg') center no-repeat;
+      background-size: cover;
+    }
+    .contactor{
+      text-align: center;
+    }
+
+    .subtitle p{
+      font-weight: bolder;
+    }
+    /*banner*/
+    .banner{
+      position: relative;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+    .banner1{
+      margin-top: 10px;
+    }
+    .banner .line1,.banner .line2{
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid #aaa;
+      top: 15px;
+    }
+    .banner .line2{
+      top: 20px;
+    }
+    .banner .content{
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      background-color: #efefef;
+      padding: 0 10px;
+    }
+    .blank{
+      height: 30px;
+    }
+    .swiper-pagination-bullet{
+      background: #fff;
+    }
+
+    .rule{
+      padding-bottom: 20px;
+    }
+    .rule .title{
+      background: url("./images/belif.png") -190px center no-repeat;
+      color: #fff200;
+      font-size: 18px;
+      text-indent: 20px;
+    }
+    .rule .content{
+      color: #777;
+      font-size: 16px;
+      padding:0 10px 0 20px;
+      margin-top: 8px;
+    }
+    .rule2 .title{
+      background: url("./images/belif.png") -120px center no-repeat;
+    }
+    .rule3 .title{
+      background: url("./images/belif.png") -210px center no-repeat;
+    }
+
+    .mask{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0,0.2);
+    }
+    .mask.off{
+      display: none;
+    }
+    .mask #play{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+      background-color: red;
+      color: #fff;
+      text-align: center;
+      line-height: 100px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <img src="./images/mlmd.jpg" style="display: none;">
+  <!-- <iframe src="./audio/loop.ogg" allow="autoplay" id="audio" style="display:none"></iframe> -->
+  <audio id="player" autoplay loop>
+    <source src="./audio/loop.ogg" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="./images/CBD--1.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/CBD--2.jpg">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div class="subtitle">
+    <div class="tags">
+      <span>品种多</span>
+      <span>空间大</span>
+      <span>价格低</span>
+    </div>
+    <p>汇聚时尚实用的一线二线品牌，选择更丰富</p>
+    <p>占地4500平米家居展厅，挑选更直观</p>
+    <p>独立自有展示房，质优价廉</p>
+  </div>
+  <div class="banner banner1">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="content">品牌展示</div>
+  </div>
+  <div class="showband">
+    <div class="band-warp">
+      <div class="band cbd">
+      </div>
+      <div class="desc">CBD家居</div>
+    </div>
+    <div class="band-warp">
+      <div class="band sx">
+      </div>
+      <div class="desc">水星家居</div>
+    </div>
+  </div>
+  <div class="showband">
+    <div class="band-warp">
+      <div class="band brs">
+      </div>
+      <div class="desc">博蕊斯头等座</div>
+    </div>
+    <div class="band-warp">
+      <div class="band gmjj">
+      </div>
+      <div class="desc">光明家居</div>
+    </div>
+  </div>
+  <div class="blank"></div>
+  <div class="banner">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="content">内景图</div>
+  </div>
+    <!-- Swiper -->
+  <div class="swiper-container2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="./images/mlmd.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/s2-2.jpeg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/CBD--4.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml2.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml1.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml3.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml4.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml5.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/ml6.jpg">
+      </div>
+    </div>
+    <div class="swiper-pagination swiper-pagination2"></div>
+  </div>
+  <div class="blank"></div>
+  <div class="banner">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="content">优惠信息</div>
+  </div>
+  <div class="discount">
+    <div class="subtitle">
+      <p>老店重装 盛大开业 疯狂促销活动</p>
+      <p>活动时间:2018年12月28日——2018年1月5日</p>
+    </div>
+    <div class="rule rule1">
+      <div class="title">
+        活动一：来了就送
+      </div>
+      <div class="content">
+        活动期间只要进店即可领取大礼品一份，先到先得，送完为止
+      </div>
+    </div>
+    <div class="rule rule2">
+      <div class="title">
+        活动二：品牌家具疯狂促销
+      </div>
+      <div class="content">
+        软体一线品牌CBD满1万打七折，满3万打6.5折，满5万打6折
+      </div>
+    </div>
+    <div class="rule rule3">
+      <div class="title">
+        活动三：买就送
+      </div>
+      <div class="content">
+        买餐桌送坐垫，买床垫送品牌床笠，买家具送品牌窗帘，成交后再可参加抽奖活动，惊喜不断
+      </div>
+    </div>
+  </div>
+  <div class="contactor subtitle">
+    <p><span>联系人</span>：王小姐 周小姐</p>
+    <p><span>电话</span>：15251333977  13338091918</p>
+    <p><span>地址</span>：江苏省启东市寅阳镇江夏村三星河桥336线南侧</p>
+  </div>
+  <div class="map" id="map">
+  </div>
+  <div class="mask off" id="mask">
+    <div id="play">播放音乐</div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="./js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var au = document.getElementById('player');
+    // document.addEventListener('touchstart', musicPlay);
+    // document.addEventListener('click', musicPlay);
+    function musicPlay() {
+        au.play();
+        document.getElementById('mask').classList.add('off');
+        // document.removeEventListener('touchstart', musicPlay);
+        // document.removeEventListener('click', musicPlay);
+    }
+    document.getElementById('mask').addEventListener('click', function(){
+      document.getElementById('mask').classList.add('off');
+    });
+    document.getElementById('play').addEventListener('click', musicPlay);
+    var swiper = new Swiper('.swiper-container',{
+        autoplay: {
+          delay: 1000,
+        },
+        speed: 500,
+        pagination: {
+          el: '.swiper-pagination',
+        }
+    });
+
+    var swiper = new Swiper('.swiper-container2',{
+        autoplay: {
+          delay: 5000,
+        },
+        pagination: {
+          el: '.swiper-pagination2',
+        }
+    });
+
+    window.onLoad  = function(){
+        var map = new AMap.Map('map', {
+            zoom:14,//级别
+            center: [121.848379,31.731826],
+        });
+        var marker = new AMap.Marker({
+            position: new AMap.LngLat(121.848379,31.731826),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+            title: '启东睦邻家具馆',
+            label: {
+                offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                content: "启东睦邻家具馆（点击导航）"
+            } 
+        });
+        console.log(marker.on)
+        marker.on('click',function(e){
+            marker.markOnAMAP({
+                name:'启东睦邻家具馆',
+                position:marker.getPosition()
+            })
+        })
+
+        // 将创建的点标记添加到已有的地图实例：
+        map.add(marker);
+    }
+    var url = 'https://webapi.amap.com/maps?v=1.4.11&key=0d457efbf2bc78c2f1e0769aa257755d&callback=onLoad';
+    var jsapi = document.createElement('script');
+    jsapi.charset = 'utf-8';
+    jsapi.src = url;
+    document.head.appendChild(jsapi);
+
+  </script>
+</body>
+</html>
